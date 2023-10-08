@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.Design;
 
 bool run = true;
-while (run) {
+while (run){
     Console.WriteLine("---------------------------");
     Console.WriteLine("Welcome to my C# calculator");
     Console.WriteLine("---------------------------");
@@ -11,17 +11,13 @@ while (run) {
     Console.WriteLine("Please enter your second input");
     string InputTwo = Console.ReadLine();
 
-    if (!int.TryParse(InputOne, out var InputOneConverted) || !int.TryParse(InputTwo, out var InputTwoConverted))
-    {
+    if (!int.TryParse(InputOne, out var InputOneConverted) || !int.TryParse(InputTwo, out var InputTwoConverted)){
         Console.WriteLine("Invalid input. Please enter valid numbers.");
         continue; // Restart the loop to get valid input
     }
-    else
-    {
+    else{
         Calculate(InputOne, InputTwo);
     }
-
-
     static void Calculate(string InputOne, string InputTwo){
         var InputOneConverted = Convert.ToInt32(InputOne);
         var InputTwoConverted = Convert.ToInt32(InputTwo);
@@ -62,19 +58,16 @@ while (run) {
     {
         Console.WriteLine("Would you like to calculate another value? (Y/N)");
         string CalAgain = Console.ReadLine().ToUpper();
-        if (CalAgain == "Y")
-        {
+        if (CalAgain == "Y"){
             run = true;
             QuestAgain = false;
         }
-        else if (CalAgain == "N")
-        {
+        else if (CalAgain == "N"){
             Console.WriteLine("Have a nice day!");
             run = false;
             QuestAgain = false;
         }
-        else
-        {
+        else{
             Console.WriteLine("Please input a valid response");
             QuestAgain = true;
         }
