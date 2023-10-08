@@ -1,4 +1,6 @@
-﻿bool run = true;
+﻿using System.ComponentModel.Design;
+
+bool run = true;
 while (run) {
     Console.WriteLine("---------------------------");
     Console.WriteLine("Welcome to my C# calculator");
@@ -41,8 +43,13 @@ while (run) {
                 Console.WriteLine(MultiplyResult);
                 break;
             case "/":
-                int DivideResult = InputOneConverted / InputTwoConverted;
-                Console.WriteLine(DivideResult);
+                if (InputTwoConverted != 0){
+                    int DivideResult = InputOneConverted / InputTwoConverted;
+                    Console.WriteLine(DivideResult);
+                }
+                else{
+                    Console.WriteLine("You can not divide by 0!");
+                }
                 break;
             case "**":
                 double PowerResult = Math.Pow(InputOneConverted, InputTwoConverted);
@@ -54,15 +61,17 @@ while (run) {
     while (QuestAgain)
     {
         Console.WriteLine("Would you like to calculate another value? (Y/N)");
-        string CalAgain = Console.ReadLine();
+        string CalAgain = Console.ReadLine().ToUpper();
         if (CalAgain == "Y")
         {
             run = true;
+            QuestAgain = false;
         }
         else if (CalAgain == "N")
         {
             Console.WriteLine("Have a nice day!");
             run = false;
+            QuestAgain = false;
         }
         else
         {
