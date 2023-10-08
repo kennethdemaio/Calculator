@@ -12,7 +12,7 @@ while (run){
     var InputOneConverted = Convert.ToInt32(InputOne);
     var InputTwoConverted = Convert.ToInt32(InputTwo);
 
-    Console.WriteLine("Would you like to multiply (*), divide (/), subtract(-), or add(+)?");
+    Console.WriteLine("Would you like to multiply (*), power of (**), divide (/), subtract(-), or add(+)?");
     string InputOperator = Console.ReadLine();
 
     switch (InputOperator){
@@ -32,6 +32,10 @@ while (run){
             int DivideResult = InputOneConverted + InputTwoConverted;
             Console.WriteLine(DivideResult);
             break;
+        case "**":
+            double PowerResult = Math.Pow(InputOneConverted, InputTwoConverted);
+            Console.WriteLine(PowerResult);
+            break;
     }
     Console.WriteLine("Would you like to calculate another value? (Y/N)");
     string CalAgain = Console.ReadLine();
@@ -40,6 +44,7 @@ while (run){
     }
     else
     {
+        Console.WriteLine("Have a nice day!");
         run = false;
     }
 }
