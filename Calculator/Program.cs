@@ -25,11 +25,11 @@ while (run){
             Console.WriteLine(SubResult);
             break;
         case "*":
-            int MultiplyResult = InputOneConverted + InputTwoConverted;
+            int MultiplyResult = InputOneConverted * InputTwoConverted;
             Console.WriteLine(MultiplyResult);
             break;
         case "/":
-            int DivideResult = InputOneConverted + InputTwoConverted;
+            int DivideResult = InputOneConverted / InputTwoConverted;
             Console.WriteLine(DivideResult);
             break;
         case "**":
